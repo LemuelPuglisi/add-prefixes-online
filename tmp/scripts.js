@@ -92,7 +92,7 @@ function shuffle(array) {
 
 async function fetchQuestions() {
     try {
-        const response = await fetch('/add-prefixes-online/med/server/questions.json');
+        const response = await fetch('/add-prefixes-online/tmp/server/questions.json');
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
