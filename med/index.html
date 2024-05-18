@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedTest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    
+    <div class="question-background row d-flex flex-column justify-content-center align-items-center">
+
+        <div class="card bg-dark col-12 col-xs-11 col-sm-8 col-lg-6">
+            <div class="card-header">
+                <strong id="question-idx">N. -</strong>
+            </div>
+            <div class="card-body d-flex flex-column">
+                <div id="outcome" class="alert alert-primary" role="alert">
+                    Leggi bene la domanda.
+                </div>
+
+                <h5 class="card-title" id="question-text">-</h5>
+                <hr> 
+                
+                <div class="h-100 d-flex flex-column justify-content-top align-items-left">
+                    
+                    <div class="d-flex flex-row justify-content-left mb-2">
+                        <input name="answer-form" class="answer-radio" type="radio" id="ans-a">
+                        <p class="answer-label" id="lab-a">A)</p>
+                    </div>
+
+                    <div class="d-flex flex-row justify-content-left mb-2">
+                        <input name="answer-form" class="answer-radio" type="radio" id="ans-b">
+                        <p class="answer-label" id="lab-b">B)</p>
+                    </div>
+
+                    <div class="d-flex flex-row justify-content-left mb-2">
+                        <input name="answer-form" class="answer-radio" type="radio" id="ans-c">
+                        <p class="answer-label" id="lab-c">C)</p>
+                    </div>
+
+                    <div class="d-flex flex-row justify-content-left mb-2">
+                        <input name="answer-form" class="answer-radio" type="radio" id="ans-d">
+                        <p class="answer-label" id="lab-d">D)</p>
+                    </div>
+
+                    <div class="d-flex flex-row justify-content-left mb-2">
+                        <input name="answer-form" class="answer-radio" type="radio" id="ans-e">
+                        <p class="answer-label" id="lab-e">E)</p>
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <div class="card-footer d-flex flex-row justify-content-between">
+                <a href="#" class="btn btn-danger btn-fs" onclick="submitAnswer()">Sottometti</a>
+                <a href="#" class="btn btn-primary btn-fs" onclick="nextQuestion()">Avanti</a>
+            </div>
+        </div>
+
+    </div>
+        
+    <!-- The Modal -->
+    <div class="modal fade" id="startmenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Menu iniziale</h5>                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    
+                    <div class="container mt-5">
+                        <form id="indexForm">
+                            <div class="form-group">
+                                <label for="startIndex">Numero domanda iniziale</label>
+                                <input type="number" class="form-control" id="start-question-idx" name="startIndex" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="endIndex">Numero domanda finale</label>
+                                <input type="number" class="form-control" id="end-question-idx" name="endIndex" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary" onclick="runTest()">Avvia</button>
+                        </form>
+                        <div id="result" class="mt-3"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- The Modal -->
+    <div class="modal fade" id="results" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark">
+                <div class="modal-body">
+
+                    <div id="results-display" class="mb-2"></div>
+                    <button class="btn btn-warning" onClick="window.location.reload();">Riavvia</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
